@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winery info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white; /* Text color for the entire page */
+        }
+
+        /* Style the navigation bar */
+        .navbar-custom {
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar-toggler-icon {
+            color: white;
+            font-size: 28px;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Style the main heading */
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            font-weight: bold;
+        }
+
+        .winery-details {
+            margin-top: 20px;
+        }
+
+        .winery-details h2 {
+            font-weight: bold;
+        }
+
+        body {
+            margin-bottom: 20px;
+        }
+
+        body {
+            background-color: #2c3e50;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .navbar-custom {
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar-toggler-icon {
+            color: white;
+            font-size: 28px;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-right: 1px solid #1d2c3a;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            font-weight: bold;
+        }
+
+        .winery-details {
+            margin-top: 20px;
+        }
+
+        .winery-details h2 {
+            font-weight: bold;
+        }
+
+        body {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <h1>Macedonian Wine World</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:white; font-size:28px;">&#9776;</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/mww-wineries">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mww-wineries/all">All wineries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mww-wineries/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 sidebar">
+            <div class="search-bar">
+                <form th:method="get" th:action="@{'/mww-wineries/info'}">
+                    <input type="search" id="name" name="name" placeholder="Search by name">
+                </form>
+            </div>
+            <div class="header text-center">
+                <h2 class="inf">Information</h2>
+                <hr>
+                <!--                <h2 class="name" th:text="${winery.getName()}">Winery Name</h2>-->
+                <!--                <span>&#128205;</span><h2 class="name" th:text="${winery.getLocation()}">Winery Location</h2>-->
+            </div>
+
+            <div class="winery-details">
+                <span class="sp">&#127760;</span><span class="sp"> &#128222;</span><span class="sp">&#127863</span>
+                <!--                <h2 class="golemina" th:text="${winery.getWp()}">Web page</h2><hr>-->
+                <!--                <h2 class="tel" th:text="${winery.getPhone()}">Phone Number</h2><hr>-->
+                <!--                <h2 class="golemina" th:text="${winery.getMenu()}">Menu</h2><hr>-->
+                <!--                <h2 class="golemina" th:text="${winery.getHours()}">Hours</h2>-->
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="map-container">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

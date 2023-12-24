@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MWW</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+<style>
+    body {
+        background-color: #2c3e50;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-custom {
+        background-color: #333;
+        color: white;
+    }
+
+    .navbar-toggler-icon {
+        color: white;
+        font-size: 28px;
+    }
+
+    .nav-link {
+        color: white;
+        font-weight: bold;
+    }
+
+    .form-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    textarea.form-control {
+        resize: vertical;
+    }
+
+    .btn-primary {
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .btn-primary:hover {
+        background-color: #1d2c3a;
+    }
+
+    body {
+        margin-bottom: 20px;
+    }
+    body {
+        background-color: #2c3e50;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-custom {
+        background-color: #333;
+        color: white;
+    }
+
+    .navbar-toggler-icon {
+        color: white;
+        font-size: 28px;
+    }
+
+    .nav-link {
+        color: white;
+        font-weight: bold;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .panel-primary {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 800px;
+    }
+
+    .panel-body {
+        padding: 20px;
+    }
+
+    .list-group-item {
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+    }
+
+    #wineryForm {
+        text-align: center;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #1d2c3a; /* Darken the color on hover */
+    }
+
+</style>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:white; font-size:28px;">&#9776;</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/mww-wineries">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mww-wineries/all">All wineries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/mww-wineries/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<h1>All wineries</h1><hr>
+<div class="panel panel-primary" id="result_panel">
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <form id="wineryForm" th:method="post" th:action="@{'/mww-wineries/region/winery'}">
+                    <div class="winery-list" th:each="w : ${wineries}">
+                        <label>
+                            <input type="radio" id="id" name="id" th:text="${w.getName() } " th:value="${w.getId()}">
+
+                        </label>
+                    </div>
+                    <a href="/mww-wineries/info">Submit</a>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
